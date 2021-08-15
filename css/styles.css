@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  color: white;
+
+  background-color: black;
+}
+
+.timer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field:not(:last-child) .value::after {
+  content: ":";
+}
+
+.label {
+  font-size: 20px;
+  text-align: center;
+}
+
+.value {
+  font-size: 109px;
+}
