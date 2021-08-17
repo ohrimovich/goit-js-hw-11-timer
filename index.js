@@ -26,13 +26,16 @@ class CountdownTimer {
         return {days,hours,mins,secs }
     }
     
-    updateTimerFace({days,hours,mins,secs }) {
-         this.refs.days.textContent = days < 10 ? `0${days}` : days;
-            this.refs.hours.textContent = hours < 10 ? `0${hours}` : hours;
-            this.refs.mins.textContent = mins < 10 ? `0${mins}` : mins;
-            this.refs.secs.textContent = secs < 10 ? `0${secs}` : secs;
-            
-    }
+updateTimerFace({ days, hours, mins, secs }) {
+    this.refs.days.textContent = days < 10 ? `0${days}` : days;
+    this.refs.days.textContent = days < 0 ? `00` : days;
+    this.refs.hours.textContent = hours < 10 ? `0${hours}` : hours;
+    this.refs.hours.textContent = hours < 0 ? `00` : hours;
+    this.refs.mins.textContent = mins < 10 ? `0${mins}` : mins;
+    this.refs.mins.textContent = mins < 0 ? `00` : mins;
+    this.refs.secs.textContent = secs < 10 ? `0${secs}` : secs;
+    this.refs.secs.textContent = secs < 0 ? `00` : secs;
+  }
 
     startTimer() {
         this.id = setInterval(() => {
