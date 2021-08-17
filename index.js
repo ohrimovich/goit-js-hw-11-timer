@@ -43,7 +43,7 @@ class CountdownTimer {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 26, 2021')});
+const timer = new CountdownTimer({targetDate : new Date('Aug 16, 2021')});
 timer.startTimer();
 
 
