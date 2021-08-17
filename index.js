@@ -8,11 +8,12 @@ class CountdownTimer {
 
         }
         this.targetDate = targetDate;
+        this.startDate = Date.now();
 
     }
 
     calc = () => {
-         this.startDate = Date.now();
+         
          let time = this.targetDate - this.startDate;
             const days = Math.floor(time / (1000 * 60 * 60 * 24));
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
