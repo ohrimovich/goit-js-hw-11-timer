@@ -8,17 +8,21 @@ class CountdownTimer {
 
         }
         this.targetDate = targetDate;
-        this.startDate = Date.now();
+        this.id = null;
+        
 
     }
 
     calc = () => {
-         
+         this.startDate = Date.now();
          let time = this.targetDate - this.startDate;
             const days = Math.floor(time / (1000 * 60 * 60 * 24));
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((time % (1000 * 60)) / 1000);
+            if(this.targetDate <= this.startDate) {
+                 clearInterval(this.id)
+            }
         return {days,hours,mins,secs }
     }
     
@@ -31,7 +35,7 @@ class CountdownTimer {
     }
 
     startTimer() {
-        setInterval(() => {
+        this.id = setInterval(() => {
             this.calc;
             const updateTime = this.calc();
             this.updateTimerFace(updateTime);
