@@ -46,7 +46,7 @@ updateTimerFace({ days, hours, mins, secs }) {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 16, 2021')});
+const timer = new CountdownTimer({targetDate : new Date('Aug 17, 2021 17:45:00')});
 timer.startTimer();
 
 
