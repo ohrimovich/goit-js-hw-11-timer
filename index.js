@@ -28,13 +28,10 @@ class CountdownTimer {
     
 updateTimerFace({ days, hours, mins, secs }) {
     this.refs.days.textContent = days < 10 ? `0${days}` : days;
-    this.refs.days.textContent = days < 0 ? `00` : days;
     this.refs.hours.textContent = hours < 10 ? `0${hours}` : hours;
-    this.refs.hours.textContent = hours < 0 ? `00` : hours;
     this.refs.mins.textContent = mins < 10 ? `0${mins}` : mins;
-    this.refs.mins.textContent = mins < 0 ? `00` : mins;
     this.refs.secs.textContent = secs < 10 ? `0${secs}` : secs;
-    this.refs.secs.textContent = secs < 0 ? `00` : secs;
+   
   }
 
     startTimer() {
@@ -46,7 +43,7 @@ updateTimerFace({ days, hours, mins, secs }) {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 17, 2021 17:00:00')});
+const timer = new CountdownTimer({targetDate : new Date('Aug 17, 2021 17:10:00')});
 timer.startTimer();
 
 
