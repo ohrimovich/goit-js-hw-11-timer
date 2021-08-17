@@ -20,7 +20,7 @@ class CountdownTimer {
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((time % (1000 * 60)) / 1000);
-            if(this.targetDate >= this.startDate) {
+            if(this.targetDate <= this.startDate) {
                  clearInterval(this.id)
             }
         return {days,hours,mins,secs }
