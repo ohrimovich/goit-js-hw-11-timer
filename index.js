@@ -13,7 +13,8 @@ class CountdownTimer {
     }
 
     calc = () => {
-         this.startDate = Date.now();
+        this.startDate = Date.now();
+      
          let time = this.targetDate - this.startDate;
             const days = Math.floor(time / (1000 * 60 * 60 * 24));
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -51,7 +52,7 @@ class CountdownTimer {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 17, 2021 19:21:00' )});
+const timer = new CountdownTimer({targetDate : new Date('Aug 26, 2021 19:40:00' )});
 timer.startTimer();
 
 
