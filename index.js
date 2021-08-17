@@ -8,6 +8,7 @@ class CountdownTimer {
 
         }
         this.targetDate = targetDate;
+        this.timerId = null;
 
     }
 
@@ -17,7 +18,11 @@ class CountdownTimer {
             const days = Math.floor(time / (1000 * 60 * 60 * 24));
             const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-            const secs = Math.floor((time % (1000 * 60)) / 1000);
+        const secs = Math.floor((time % (1000 * 60)) / 1000);
+        if (this.targetDate <= this.startDate) {
+            clearInterval(this.timerId);
+            this.setEndTimerValues();
+            }
         return {days,hours,mins,secs }
     }
     
@@ -29,8 +34,16 @@ class CountdownTimer {
             
     }
 
+    setEndTimerValues({days,hours,mins,secs }) {
+        
+        this.refs.days.textContent = '00';
+        this.refs.hours.textContent = '00';
+        this.refs.mins.textContent = '00';
+        this.refs.secs.textContent = '00';
+}
+
     startTimer() {
-        setInterval(() => {
+        this.timerId =  setInterval(() => {
             this.calc;
             const updateTime = this.calc();
             this.updateTimerFace(updateTime);
@@ -38,7 +51,7 @@ class CountdownTimer {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 26, 2021')});
+const timer = new CountdownTimer({targetDate : new Date('Aug 17, 2021 19:21:00' )});
 timer.startTimer();
 
 
