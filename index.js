@@ -52,7 +52,7 @@ class CountdownTimer {
         }
 
 }
-const timer = new CountdownTimer({targetDate : new Date('Aug 26, 2021 10:10:00' )});
+const timer = new CountdownTimer({targetDate : new Date('Aug 26, 2022 10:10:00' )});
 timer.startTimer();
 
 
